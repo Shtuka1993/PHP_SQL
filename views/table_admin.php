@@ -1,0 +1,7 @@
+<!--GENERATE LOOK OF ONE TABLE FOR ADMIN--> 
+
+<?php
+
+
+
+?>
