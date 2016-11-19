@@ -23,16 +23,16 @@
             <div id="addart">
                 <form method="post" action="index.php?action=<?=$_GET['action']?>&id=<?=$_GET['id']?>">
                     <label>
-                        Название
-                        <input type="text" name="title" value="<?=$article['title']?>" class="form-item" autofocus required>
+                        Імя
+                        <input type="text" name="name" value="<?=$row['name']?>" class="form-item" autofocus required>
                     </label>
                     <label>
                         Дата
-                        <input type="date" name="date" value="<?=$article['date']?>" class="form-item" required>
+                        <input type="date" name="date" value="<?=$row['date']?>" class="form-item" required>
                     </label>
                     <label>
-                        Содержимое
-                        <textarea class="form-item" name="content" required><?=$article['content']?></textarea>
+                        Коментар
+                        <textarea class="form-item" name="text" required><?=$row['text']?></textarea>
                     </label>
                     <input type="submit" value="Сохранить" class="btn">
                 </form>

@@ -28,7 +28,7 @@
             <div class="article">
 				<h3><?=$row['name']?></h3>
 				<address><?=$row['e_mail']?></address>
-				<a href="<?$row['cite']?>"><b><?$row['cite']?><b></a>
+				<a><b><?$row['cite']?><b></a>
                 <em>Опублікованно: <?=$row['date']?></em>
                 <p><?=$row['text']?></p>
             </div>

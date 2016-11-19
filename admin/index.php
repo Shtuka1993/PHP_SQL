@@ -21,15 +21,15 @@
         $id = (int)$_GET['id'];
         
         if(!empty($_POST) && $id > 0) {
-            articles_edit($link, $id, $_POST['title'], $_POST['date'], $_POST['content']);
+            row_edit($link, $id, $_POST['title'], $_POST['date'], $_POST['content']);
             header("Location: index.php");
         }
         
-        $article = article_get($link, $id);
-        include("../views/article_admin.php");  
+        $row = row_get($link, $id);
+        include("../views/row_admin.php");  
     }else if($action == 'delete'){
         $id = $_GET['id'];
-        $article = articles_delete($link, $id);
+        $row = row_delete($link, $id);
         header('Location: index.php');
     }
     else{

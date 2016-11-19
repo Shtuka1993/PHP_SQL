@@ -25,7 +25,7 @@
             <!-- END Header (navbar) -->
             <?php foreach($rows as $row): ?>
             <div class="article">
-                <h3><a href="views/row.php?id=<?=$row['id']?>"><?=$row['name']?></a></h3>
+                <h3><a href="row.php?id=<?=$row['id']?>"><?=$row['name']?></a></h3>
                 <em>Опубликованно: <?=$row['date']?></em>
                 <p><?=row_intro($row['text'])?></p>
             </div>

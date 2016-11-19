@@ -76,25 +76,24 @@
         return true;
     }
     
-    
-    /*
-    function articles_edit($link, $id, $title, $date, $content){
-        // Подготовка
-        $title = trim($title);
-        $content = trim($content);
+//Реалізація редагування коментарів....    
+    function row_edit($link, $id, $name, $date, $text){
+        // Підготовка
+        $name = trim($name);
+        $text = trim($text);
         $date = trim($date);
         $id = (int)$id;
             
-        // Проверка
-        if ($title == '')
+        // Провірка
+        if ($name == '')
             return false;
         
-        // Запрос
-        $template_update = "UPDATE articles SET title='%s', content='%s', date='%s' WHERE id='%d'";
+        // Запит
+        $template_update = "UPDATE users SET name='%s', text='%s', date='%s' WHERE id='%d'";
             
         $query = sprintf($template_update, 
-                         mysqli_real_escape_string($link, $title),
-                         mysqli_real_escape_string($link, $content),
+                         mysqli_real_escape_string($link, $name),
+                         mysqli_real_escape_string($link, $text),
                          mysqli_real_escape_string($link, $date),
                          $id);
         
@@ -105,17 +104,18 @@
         
         return mysqli_affected_rows($link);
     }
-    */
-    
-    /*
-    function articles_delete($link, $id){
+	
+	
+	
+//Видаляє комент
+    function row_delete($link, $id){
         $id = (int)$id;
-        // Проверка
+        // Провірка
         if ($id == 0)
             return false;
         
-        // Запрос
-        $query = sprintf("DELETE FROM articles WHERE id='%d'", $id);
+        // Запит
+        $query = sprintf("DELETE FROM users WHERE id='%d'", $id);
         $result = mysqli_query($link, $query);
         
         if (!result)
@@ -123,7 +123,6 @@
         
         return mysqli_affected_rows($link);
     }
-    */
     
 //Генеруємо обмеженнний вступ до комментаря на 500 символів
     function row_intro($text, $len = 500)
